@@ -40,11 +40,15 @@ body {
   justify-content: space-around;
 }
 
+.menu__container {
+  height: 100vh;
+  background-color: gray;
+  display: none;
+}
+
 .menu__item {
   height: 50px;
   position: relative;
-  left: 102%;
-  top: -50%;
   border-radius: 0.5em;
   display: none;
   background-color: whitesmoke;
@@ -90,12 +94,25 @@ body {
 
   .container {
     width: 100%;
-  }
-}
-
-.menu:hover,
-.menu__item:hover {
-  .menu__item {
     display: block;
+  }
+
+  .menu__container {
+    display: block;
+    position: relative;
+    transform: translate(-150%, 50%);
+    transition-duration: 1s;
+  }
+
+  .menu:hover,
+  .menu__item:hover {
+    .menu__item {
+      display: block;
+    }
+    .menu__container {
+      display: block;
+      transform: translate(0, -8%);
+      transition-duration: 1s;
+    }
   }
 }
