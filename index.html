@@ -8,13 +8,30 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
+      <div class="container" id="container">
+        <button id="menu" onclick="toogle_menu()"></button>
         <div class="header__item">Item 1</div>
         <div class="header__item">Item 2</div>
         <div class="header__item">Item 3</div>
         <div class="header__item">Item 4</div>
         <div class="header__item">Item 5</div>
-        <div class="menu"></div>
+        <script>
+          function toogle_menu() {
+            var header_items = document.getElementsByClassName("header__item");
+            var menu = document.getElementById("menu");
+            var container = document.getElementById("container");
+
+            for (let i = 0; i < header_items.length; i++) {
+              if (header_items[i].style.display == "none") {
+                header_items[i].style.display = "grid";
+                container.style.display = "flex";
+              } else {
+                header_items[i].style.display = "none";
+                container.style.display = "block";
+              }
+            }
+          }
+        </script>
       </div>
     </header>
     <div class="content">
