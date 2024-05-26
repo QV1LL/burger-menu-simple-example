@@ -16,21 +16,38 @@
         <div class="header__item">Item 4</div>
         <div class="header__item">Item 5</div>
         <script>
-          function toogle_menu() {
-            var header_items = document.getElementsByClassName("header__item");
-            var menu = document.getElementById("menu");
-            var container = document.getElementById("container");
+          header_items = document.getElementsByClassName("header__item");
+          menu = document.getElementById("menu");
+          container = document.getElementById("container");
 
+          function toogle_menu() {
+            console.log(window.innerWidth);
             for (let i = 0; i < header_items.length; i++) {
               if (header_items[i].style.display == "none") {
                 header_items[i].style.display = "grid";
                 container.style.display = "flex";
+
+                menu_open = true;
               } else {
                 header_items[i].style.display = "none";
                 container.style.display = "block";
               }
             }
           }
+
+          function auto_of_menu() {
+            for (let i = 0; i < header_items.length; i++) {
+              if (window.innerWidth > 800) {
+                header_items[i].removeAttribute("style");
+                container.removeAttribute("style");
+              } else {
+                header_items[i].style.display = "none";
+                container.style.display = "block";
+              }
+            }
+          }
+
+          window.onresize = auto_of_menu;
         </script>
       </div>
     </header>
