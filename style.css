@@ -60,6 +60,8 @@ body {
 .header__item:hover {
   transform: scale(1.3);
   box-shadow: 0 0 1em 0 darkcyan;
+  background-color: skyblue;
+  border-radius: 1em;
 }
 
 .content__container {
